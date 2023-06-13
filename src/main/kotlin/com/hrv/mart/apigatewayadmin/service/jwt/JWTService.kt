@@ -18,7 +18,7 @@ class JWTService {
     private fun generateKeyFromSecret(): KeyPair {
         val secretBytes = secret.toByteArray()
 
-        val keyPairGenerator = KeyPairGenerator.getInstance("RSA256")
+        val keyPairGenerator = KeyPairGenerator.getInstance("RSA")
 
         val secureRandom = SecureRandom.getInstance("SHA1PRNG")
         secureRandom.setSeed(secretBytes)
