@@ -27,7 +27,7 @@ class JWTService {
         return keyPairGenerator.generateKeyPair()
     }
 
-    fun createJwt(userId: String) =
+    fun createJwt(userId: String): String =
         Jwts.builder()
             .signWith(keyPair.private, SignatureAlgorithm.RS256)
             .setSubject(userId)
