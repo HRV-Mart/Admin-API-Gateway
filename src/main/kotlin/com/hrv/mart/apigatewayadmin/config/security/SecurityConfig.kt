@@ -1,4 +1,4 @@
-package com.hrv.mart.apigatewayadmin.config.jwt
+package com.hrv.mart.apigatewayadmin.config.security
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -27,8 +27,8 @@ class SecurityConfig {
                     .permitAll()
                     .pathMatchers("/auth/signup")
                     .permitAll()
-                    .pathMatchers("/user")
-                    .authenticated()
+                    .pathMatchers("/admin")
+                    .hasAuthority("ADMIN")
             }
             .addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION)
             .httpBasic {
