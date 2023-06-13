@@ -1,4 +1,4 @@
-package com.hrv.mart.apigatewayadmin.service.jwt
+package com.hrv.mart.apigatewayadmin.service
 
 import com.hrv.mart.apigatewayadmin.model.AuthRequest
 import org.springframework.stereotype.Service
