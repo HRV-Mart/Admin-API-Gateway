@@ -2,6 +2,7 @@ package com.hrv.mart.apigatewayadmin.controller
 
 import com.hrv.mart.apigatewayadmin.service.ProductService
 import com.hrv.mart.product.Product
+import org.springframework.http.server.reactive.ServerHttpResponse
 import org.springframework.web.bind.annotation.*
 import java.security.Principal
 
@@ -14,9 +15,13 @@ class ProductController (
     @PostMapping
     fun createProduct(
         @RequestBody product: Product,
-        principal: Principal
+        principal: Principal,
+        response: ServerHttpResponse
     ) =
-        productService.createProduct(product)
+        productService.createProduct(
+            product,
+            response
+        )
     @PutMapping
     fun updateProduct(
         @RequestBody product: Product,
