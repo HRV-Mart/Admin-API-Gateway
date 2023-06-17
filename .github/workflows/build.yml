@@ -8,6 +8,8 @@ on:
     branches:
       - 'master'
 env:
+  USERNAME: ${{ secrets.OSSRH_USERNAME }}
+  TOKEN: ${{ secrets.OSSRH_TOKEN }}
   APPLICATION_PORT: '8080'
   PRODUCT_URL: http://localhost:8081/product
 
