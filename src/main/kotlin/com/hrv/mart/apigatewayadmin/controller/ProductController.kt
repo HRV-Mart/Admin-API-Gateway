@@ -25,10 +25,14 @@ class ProductController (
     @PutMapping
     fun updateProduct(
         @RequestBody product: Product,
-        principal: Principal
+        principal: Principal,
+        response: ServerHttpResponse
     ) =
-        productService.updateProduct(product)
+        productService.updateProduct(product, response)
     @DeleteMapping("/{productId}")
-    fun deleteMapping(@PathVariable productId: String) =
-        productService.deleteProduct(productId)
+    fun deleteMapping(
+        @PathVariable productId: String,
+        response: ServerHttpResponse
+    ) =
+        productService.deleteProduct(productId, response)
 }
