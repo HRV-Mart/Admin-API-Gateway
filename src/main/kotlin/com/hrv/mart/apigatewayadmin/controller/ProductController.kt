@@ -5,7 +5,8 @@ import com.hrv.mart.product.Product
 import org.springframework.web.bind.annotation.*
 import java.security.Principal
 
-@RestController("/admin/product")
+@RestController
+@RequestMapping("/admin/product")
 class ProductController (
     private val productService: ProductService
 )
