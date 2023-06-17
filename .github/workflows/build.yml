@@ -9,6 +9,7 @@ on:
       - 'master'
 env:
   APPLICATION_PORT: '8080'
+  PRODUCT_URL: http://localhost:8081/product
 
 jobs:
   build:
