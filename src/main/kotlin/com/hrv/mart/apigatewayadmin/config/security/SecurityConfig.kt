@@ -27,7 +27,7 @@ class SecurityConfig {
                     .permitAll()
                     .pathMatchers("/auth/signup")
                     .permitAll()
-                    .pathMatchers("/admin")
+                    .pathMatchers("/admin/**")
                     .hasAuthority("ADMIN")
             }
             .addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION)
