@@ -39,7 +39,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
     // Product Library
-    implementation("com.hrv.mart:product:0.0.4-beta")
+    implementation("com.hrv.mart:product:0.0.4")
 }
 
 tasks.withType<KotlinCompile> {
