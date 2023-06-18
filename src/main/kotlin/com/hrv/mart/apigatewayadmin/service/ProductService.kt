@@ -3,6 +3,7 @@ package com.hrv.mart.apigatewayadmin.service
 import com.hrv.mart.product.Product
 import com.hrv.mart.product.repository.ProductRepository
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.http.server.reactive.ServerHttpResponse
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 
@@ -16,13 +17,31 @@ class ProductService(
             WebClient.builder(),
             productUrl
         )
-    fun createProduct (product: Product) =
+    fun createProduct (
+        product: Product,
+        response: ServerHttpResponse
+    ) =
         productRepository
-            .createProduct(product)
-    fun updateProduct(product: Product) =
+            .createProduct(
+                product,
+                response
+            )
+    fun updateProduct(
+        product: Product,
+        response: ServerHttpResponse
+    ) =
         productRepository
-            .updateProduct(product)
-    fun deleteProduct(productId: String) =
+            .updateProduct(
+                product,
+                response
+            )
+    fun deleteProduct(
+        productId: String,
+        response: ServerHttpResponse
+    ) =
         productRepository
-            .deleteProduct(productId)
+            .deleteProduct(
+                productId,
+                response
+            )
 }
