@@ -40,6 +40,8 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
     // Product Library
     implementation("com.hrv.mart:product:0.0.4")
+    // Auth Library
+    implementation("com.hrv.mart:auth-library:0.0.2")
 }
 
 tasks.withType<KotlinCompile> {

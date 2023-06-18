@@ -12,6 +12,7 @@ env:
   TOKEN: ${{ secrets.OSSRH_TOKEN }}
   APPLICATION_PORT: '8080'
   PRODUCT_URL: http://localhost:8081/product
+  AUTH_URL:  http://localhost:8082/auth
 
 jobs:
   build:
