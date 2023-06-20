@@ -13,12 +13,10 @@ on:
   release:
     types: [published]
 env:
-  APPLICATION_PORT: ${{ secrets.PORT }}
-  PRODUCT_URL: ${{ secrets.PRODUCT_URL }}
-  AUTH_SERVER_URL: ${{ secrets.AUTH_SERVER_URL }}
-  JWT_SECRET: ${{ secrets.JWT_SECRET }}
-  USERNAME: ${{secrets.OSSRH_USERNAME}}
-  TOKEN: ${{secrets.OSSRH_TOKEN}}
+  APPLICATION_PORT: '3003'
+  JWT_SECRET: secret
+  PRODUCT_URL: http://localhost:8081/product
+  AUTH_URL: http://localhost:8082/auth
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
