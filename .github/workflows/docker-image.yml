@@ -16,7 +16,7 @@ env:
   APPLICATION_PORT: ${{ secrets.PORT }}
   PRODUCT_URL: ${{ secrets.PRODUCT_URL }}
   AUTH_SERVER_URL: ${{ secrets.AUTH_SERVER_URL }}
-  HASHED_SECRET: ${{ secrets.HASHED_SECRET }}
+  JWT_SECRET: ${{ secrets.JWT_SECRET }}
   USERNAME: ${{secrets.OSSRH_USERNAME}}
   TOKEN: ${{secrets.OSSRH_TOKEN}}
 jobs:
