@@ -2,6 +2,7 @@ package com.hrv.mart.apigatewayadmin.service
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.security.KeyPair
 import java.security.KeyPairGenerator
@@ -11,8 +12,11 @@ import java.time.Instant
 import java.util.*
 
 @Service
-class JWTService {
-    private val secret = "TESTING_SECRET"
+class JWTService (
+    @Value("\${hrv.mart.jwt.secret}")
+    private val secret: String
+)
+{
     val keyPair = generateKeyFromSecret()
 
     private fun generateKeyFromSecret(): KeyPair {
