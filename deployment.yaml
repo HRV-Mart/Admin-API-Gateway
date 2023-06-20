@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: admin-api-gateway-deployment
+  labels:
+    app: admin-api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: admin-api-gateway
+  template:
+    metadata:
+      name: admin-api-gateway
+      labels:
+        app: admin-api-gateway
+    spec:
+      containers:
+        - name: admin-api-gateway
+          image: harsh3305/hrv-mart-admin-api-gateway
+          imagePullPolicy: Always
+          env:
+            - name: APPLICATION_PORT
+              value: 3003
+            - name: MONGODB_URI
+              valueFrom:
+                configMapKeyRef:
+                  key: mongodb-uri
+                  name: config-map
+
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: admin-api-gateway
+spec:
+  selector:
+    app: admin-api-gateway
+  ports:
+    - protocol: TCP
+      port: 3003
+      targetPort: 3003
+  type: NodePort
