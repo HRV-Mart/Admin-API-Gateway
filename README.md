@@ -10,5 +10,5 @@ gradle clean build
 ```
 ## Set up application using Docker
 ```
-docker run  --name HRV-Mart-Admin-Api-Gateway` -it --init --net="host" -d harsh3305/hrv-mart-admin-api-gateway:latest
+docker run  --name HRV-Mart-Admin-Api-Gateway -it --init --net="host" -d harsh3305/hrv-mart-admin-api-gateway:latest
 ```
