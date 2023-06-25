@@ -1,6 +1,6 @@
 package com.hrv.mart.apigatewayadmin.service
 
-import com.hrv.mart.product.Product
+import com.hrv.mart.product.model.Product
 import com.hrv.mart.product.repository.ProductRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
