@@ -1,6 +1,6 @@
 package com.hrv.mart.apigatewayadmin.config.jwt
 
-import com.hrv.mart.apigatewayadmin.service.JWTService
+import com.hrv.mart.apigatewayadmin.service.jwt.JWTService
 import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication

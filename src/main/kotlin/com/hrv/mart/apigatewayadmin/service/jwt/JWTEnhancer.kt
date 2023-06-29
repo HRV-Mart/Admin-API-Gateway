@@ -1,4 +1,4 @@
-package com.hrv.mart.apigatewayadmin.service
+package com.hrv.mart.apigatewayadmin.service.jwt
 
 class JWTEnhancer {
 

@@ -1,4 +1,4 @@
-package com.hrv.mart.apigatewayadmin.service
+package com.hrv.mart.apigatewayadmin.service.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
