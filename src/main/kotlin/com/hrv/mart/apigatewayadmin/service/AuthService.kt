@@ -11,10 +11,11 @@ class AuthService (
     private val authRepository: AuthRepository
 )
 {
+    private val specialCharCode= 34
     fun login(appwriteJWT: String, response: ServerHttpResponse) =
         authRepository
             .createAdminAuth(
-                jwt = appwriteJWT,
+                jwt = appwriteJWT.replace(specialCharCode.toChar().toString(), ""),
                 response = response
             )
 }
