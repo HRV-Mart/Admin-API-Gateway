@@ -4,7 +4,7 @@ ARG JAR_FILE=build/libs/API-Gateway-Admin-0.0.1-SNAPSHOT.jar
 ARG APPLICATION_PORT=3003
 
 ARG PRODUCT_URL=http://localhost:8081/product
-ARG AUTH_SERVER_URL=http://localhost:8082/auth
+ARG AUTH_URL=http://localhost:8082/auth
 ARG HASHED_SECRET=secret
 
 ENV APPLICATION_PORT=$APPLICATION_PORT
