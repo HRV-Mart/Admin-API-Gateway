@@ -47,6 +47,6 @@ class JWTService (
         Jwts.parserBuilder()
             .setSigningKey(keyPair.public)
             .build()
-            .parseClaimsJws(jwt)
+            .parseClaimsJws(JWTEnhancer.enhanceJWT(jwt))
 
 }

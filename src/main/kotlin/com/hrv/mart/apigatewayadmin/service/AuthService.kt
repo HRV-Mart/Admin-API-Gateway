@@ -15,7 +15,7 @@ class AuthService (
     fun login(appwriteJWT: String, response: ServerHttpResponse) =
         authRepository
             .createAdminAuth(
-                jwt = appwriteJWT.replace(specialCharCode.toChar().toString(), ""),
+                jwt = JWTEnhancer.enhanceJWT(appwriteJWT),
                 response = response
             )
 }
