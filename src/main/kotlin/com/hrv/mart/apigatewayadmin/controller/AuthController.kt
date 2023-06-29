@@ -1,7 +1,7 @@
 package com.hrv.mart.apigatewayadmin.controller
 
 import com.hrv.mart.apigatewayadmin.service.AuthService
-import com.hrv.mart.apigatewayadmin.service.JWTService
+import com.hrv.mart.apigatewayadmin.service.jwt.JWTService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.server.reactive.ServerHttpResponse
 import org.springframework.web.bind.annotation.PostMapping

@@ -1,5 +1,6 @@
 package com.hrv.mart.apigatewayadmin.service
 
+import com.hrv.mart.apigatewayadmin.service.jwt.JWTEnhancer
 import com.hrv.mart.authlibrary.repository.AuthRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.server.reactive.ServerHttpResponse
@@ -15,7 +16,7 @@ class AuthService (
     fun login(appwriteJWT: String, response: ServerHttpResponse) =
         authRepository
             .createAdminAuth(
-                jwt = appwriteJWT.replace(specialCharCode.toChar().toString(), ""),
+                jwt = JWTEnhancer.enhanceJWT(appwriteJWT),
                 response = response
             )
 }

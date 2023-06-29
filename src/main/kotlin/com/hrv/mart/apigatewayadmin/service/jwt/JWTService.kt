@@ -1,4 +1,4 @@
-package com.hrv.mart.apigatewayadmin.service
+package com.hrv.mart.apigatewayadmin.service.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
@@ -47,6 +47,6 @@ class JWTService (
         Jwts.parserBuilder()
             .setSigningKey(keyPair.public)
             .build()
-            .parseClaimsJws(jwt)
+            .parseClaimsJws(JWTEnhancer.enhanceJWT(jwt))
 
 }
