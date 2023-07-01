@@ -39,7 +39,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
     // Product Library
-    implementation("com.hrv.mart:product:0.0.5")
+    implementation("com.hrv.mart:product:0.0.6")
     // Auth Library
     implementation("com.hrv.mart:auth-library:0.0.2")
 }
