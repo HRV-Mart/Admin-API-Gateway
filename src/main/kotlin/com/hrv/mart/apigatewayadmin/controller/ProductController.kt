@@ -14,6 +14,16 @@ class ProductController (
     private val productService: ProductService
 )
 {
+    @GetMapping("/{productId}")
+    fun getProductById(
+        @PathVariable productId: String,
+        response: ServerHttpResponse
+    ) =
+        productService
+            .getProductById(
+                productId,
+                 response
+            )
     @GetMapping
     fun getAllProduct(
         @RequestParam size: Optional<Long>,
