@@ -1,5 +1,6 @@
 package com.hrv.mart.apigatewayadmin.service
 
+import com.hrv.mart.custompageable.model.QueryParams
 import com.hrv.mart.product.model.Product
 import com.hrv.mart.product.repository.ProductRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -37,5 +38,17 @@ class ProductService(
             .deleteProduct(
                 productId,
                 response
+            )
+    fun getProductById(productId: String, response: ServerHttpResponse) =
+        productRepository
+            .getProductByProductId(productId, response)
+    fun getAllProduct(
+        queryParams: QueryParams,
+        response: ServerHttpResponse
+    ) =
+        productRepository
+            .getAllProduct(
+                queryParams = queryParams,
+                response = response
             )
 }

@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "3.1.1"
     id("io.spring.dependency-management") version "1.1.0"
-    kotlin("jvm") version "1.8.22"
-    kotlin("plugin.spring") version "1.8.22"
+    kotlin("jvm") version "1.9.0"
+    kotlin("plugin.spring") version "1.9.0"
     id("io.gitlab.arturbosch.detekt") version "1.23.0"
 }
 
@@ -39,9 +39,10 @@ dependencies {
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
-    // HRV-Mart
+    // HRV-Mart dependencies
     implementation("com.hrv.mart:product:0.0.6")
     implementation("com.hrv.mart:auth-library:0.0.2")
+    implementation("com.hrv.mart:custom-pageable:0.0.2")
     // Detekt-formatting
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
 }
