@@ -12,7 +12,7 @@ class ProductService(
     @Autowired
     private val productRepository: ProductRepository
 ) {
-    fun createProduct (
+    fun createProduct(
         product: Product,
         response: ServerHttpResponse
     ) =

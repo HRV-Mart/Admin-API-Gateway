@@ -28,7 +28,6 @@ class ProductController (
     fun getAllProduct(
         @RequestParam size: Optional<Long>,
         @RequestParam page: Optional<Long>,
-        principal: Principal,
         response: ServerHttpResponse
     ) =
         productService
@@ -42,7 +41,6 @@ class ProductController (
     @PostMapping
     fun createProduct(
         @RequestBody product: Product,
-        principal: Principal,
         response: ServerHttpResponse
     ) =
         productService.createProduct(
@@ -52,7 +50,6 @@ class ProductController (
     @PutMapping
     fun updateProduct(
         @RequestBody product: Product,
-        principal: Principal,
         response: ServerHttpResponse
     ) =
         productService.updateProduct(product, response)
