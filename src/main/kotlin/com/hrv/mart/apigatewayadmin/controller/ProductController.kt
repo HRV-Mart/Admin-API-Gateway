@@ -5,6 +5,7 @@ import com.hrv.mart.custompageable.model.QueryParams
 import com.hrv.mart.product.model.Product
 import org.springframework.http.server.reactive.ServerHttpResponse
 import org.springframework.web.bind.annotation.*
+import java.security.Principal
 import java.util.*
 
 @RestController
@@ -27,7 +28,6 @@ class ProductController (
     fun getAllProduct(
         @RequestParam size: Optional<Long>,
         @RequestParam page: Optional<Long>,
-        principal: Principal,
         response: ServerHttpResponse
     ) =
         productService
