@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
     kotlin("jvm") version "1.8.22"
     kotlin("plugin.spring") version "1.8.22"
+    id("io.gitlab.arturbosch.detekt") version "1.23.0"
 }
 
 group = "com.hrv.mart"
@@ -38,12 +39,18 @@ dependencies {
     implementation("io.jsonwebtoken:jjwt-api:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
-    // Product Library
+    // HRV-Mart
     implementation("com.hrv.mart:product:0.0.6")
-    // Auth Library
     implementation("com.hrv.mart:auth-library:0.0.2")
+    // Detekt-formatting
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
 }
 
+//detekt configs
+detekt {
+    toolVersion = "1.22.0"
+    config = files("config/detekt/detekt.yml")
+}
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
