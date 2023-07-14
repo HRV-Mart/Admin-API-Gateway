@@ -1,5 +1,6 @@
 package com.hrv.mart.apigatewayadmin.service.jwt
 
+import com.hrv.mart.authlibrary.model.UserType
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.beans.factory.annotation.Value
@@ -31,11 +32,12 @@ class JWTService (
         return keyPairGenerator.generateKeyPair()
     }
 
-    fun createJwt(userId: String): String =
+    fun createJwt(userId: String, role: UserType): String =
         Jwts.builder()
             .signWith(keyPair.private, SignatureAlgorithm.RS256)
             .setSubject(userId)
-            .setIssuer("identity")
+            .setHeaderParam("role", role)
+            .setIssuer("HRV-Mart")
             .setExpiration(Date.from(Instant.now().plus(Duration.ofMinutes(15))))
             .setIssuedAt(Date.from(Instant.now()))
             .compact()
