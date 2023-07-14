@@ -1,5 +1,6 @@
 package com.hrv.mart.apigatewayadmin.config.security
 
+import com.hrv.mart.authlibrary.model.UserType
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.ReactiveAuthenticationManager
@@ -28,7 +29,7 @@ class SecurityConfig {
                     .pathMatchers("/auth/signup")
                     .permitAll()
                     .pathMatchers("/admin/**")
-                    .hasAuthority("ADMIN")
+                    .hasAuthority(UserType.ADMIN.name)
             }
             .addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION)
             .httpBasic {
