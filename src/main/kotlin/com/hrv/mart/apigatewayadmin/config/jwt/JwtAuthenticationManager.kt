@@ -13,12 +13,14 @@ class JwtAuthenticationManager(private val jwtSigner: JWTService) : ReactiveAuth
     override fun authenticate(authentication: Authentication): Mono<Authentication> {
         return Mono.just(authentication)
             .map { jwtSigner.validateJwt(it.credentials as String) }
-            .onErrorResume { Mono.empty() }
+            .onErrorResume {
+                Mono.empty()
+            }
             .map { jws ->
                 UsernamePasswordAuthenticationToken(
                     jws.body.subject,
                     authentication.credentials as String,
-                    mutableListOf(SimpleGrantedAuthority("ADMIN"))
+                        mutableListOf(SimpleGrantedAuthority(jws.header["role"].toString()))
                 )
             }
     }
