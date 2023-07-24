@@ -41,7 +41,7 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
     // HRV-Mart dependencies
     implementation("com.hrv.mart:product:0.0.6")
-    implementation("com.hrv.mart:auth-library:0.0.2")
+    implementation("com.hrv.mart:auth-library:0.0.3")
     implementation("com.hrv.mart:custom-pageable:0.0.2")
     // Detekt-formatting
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
