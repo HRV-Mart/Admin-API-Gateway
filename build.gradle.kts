@@ -44,7 +44,7 @@ dependencies {
     implementation("com.hrv.mart:auth-library:0.0.2")
     implementation("com.hrv.mart:custom-pageable:0.0.2")
     // Detekt-formatting
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.1")
 }
 
 //detekt configs
