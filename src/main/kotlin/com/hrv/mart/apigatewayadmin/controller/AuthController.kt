@@ -22,6 +22,6 @@ class AuthController (
         authService
             .login(appwriteJWT, response)
             .map {
-                jwtService.createJwt(it.email)
+                jwtService.createJwt(it.userId)
             }
 }
