@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "3.1.2"
     id("io.spring.dependency-management") version "1.1.2"
-    kotlin("jvm") version "1.8.22"
-    kotlin("plugin.spring") version "1.8.22"
+    kotlin("jvm") version "1.9.0"
+    kotlin("plugin.spring") version "1.9.0"
     id("io.gitlab.arturbosch.detekt") version "1.23.1"
 }
 
@@ -49,7 +49,7 @@ dependencies {
 
 //detekt configs
 detekt {
-    toolVersion = "1.22.0"
+    toolVersion = "1.23.1"
     config = files("config/detekt/detekt.yml")
 }
 tasks.withType<KotlinCompile> {
