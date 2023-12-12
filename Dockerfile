@@ -1,4 +1,4 @@
-FROM openjdk:22
+FROM openjdk:23
 ARG JAR_FILE=build/libs/API-Gateway-Admin-0.0.1-SNAPSHOT.jar
 
 ARG APPLICATION_PORT=3003
